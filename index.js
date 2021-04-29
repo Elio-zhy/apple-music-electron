@@ -112,8 +112,8 @@ cache.get(
     "/assets/:asset_id",
     async (req, res, next) => {
         res.locals.fetchUrl = [
-            `http://music.apple.com`,
-            'http://beta.music.apple.com'
+            `http://music.apple.com/cn`,
+            'http://beta.music.apple.com/cn'
         ];
         next();
     },
@@ -166,7 +166,7 @@ function createWindow() {
     win.setAutoHideMenuBar(true);
     // load Apple Music based on the store value
     // use http instead of https to fix adam id bug
-    win.loadURL(store.get("beta") ? "http://beta.music.apple.com" : "http://music.apple.com");
+    win.loadURL(store.get("beta") ? "http://beta.music.apple.com/cn" : "http://music.apple.com/cn");
     // dark mode setting
     switch (store.get("darkmode")) {
         case null:
